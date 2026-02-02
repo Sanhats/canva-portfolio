@@ -43,7 +43,7 @@ export default function Portfolio() {
       id: 6,
       title: 'Logo 6',
       category: 'Insumos de repostería y forragería',
-      image: '/logo6.jpg',
+      image: '/Logo6.jpg',
       description: 'Diseño de logo personalizado',
     },
   ]
