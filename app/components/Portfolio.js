@@ -1,80 +1,106 @@
+import Image from 'next/image'
+
 export default function Portfolio() {
-  // Ejemplo de proyectos - reemplaza con tus propios diseños
+  // Proyectos con logos
   const projects = [
     {
       id: 1,
-      title: 'Proyecto 1',
-      category: 'Branding',
-      image: '/placeholder-1.jpg',
-      description: 'Descripción del proyecto de branding',
-    },
-    {
-      id: 2,
-      title: 'Proyecto 2',
-      category: 'Ilustración',
-      image: '/placeholder-2.jpg',
-      description: 'Descripción del proyecto de ilustración',
-    },
-    {
-      id: 3,
-      title: 'Proyecto 3',
-      category: 'Redes Sociales',
-      image: '/placeholder-3.jpg',
-      description: 'Descripción del proyecto de redes sociales',
-    },
-    {
-      id: 4,
-      title: 'Proyecto 4',
-      category: 'Editorial',
-      image: '/placeholder-4.jpg',
-      description: 'Descripción del proyecto editorial',
+      title: 'Logo 1',
+      category: 'Empresa de mermeladas',
+      image: '/logo1.jpg',
+      description: 'Diseño de logo personalizado',
     },
     {
       id: 5,
-      title: 'Proyecto 5',
-      category: 'Branding',
-      image: '/placeholder-5.jpg',
-      description: 'Descripción del proyecto de branding',
+      title: 'Logo 5',
+      category: 'Empresa de mermeladas',
+      image: '/logo5.jpg',
+      description: 'Diseño de logo personalizado',
     },
     {
+      id: 2,
+      title: 'Logo 2',
+      category: 'Vibero',
+      image: '/logo2.jpg',
+      description: 'Identidad visual creativa',
+    },
+    {
+      id: 3,
+      title: 'Logo 3',
+      category: 'Tienda virtual de ropa de segunda mano',
+      image: '/logo3.jpg',
+      description: 'Diseño de marca',
+    },
+    {
+      id: 4,
+      title: 'Logo 4',
+      category: 'Restaurante de Sushi',
+      image: '/logo4.jpg',
+      description: 'Creación de identidad visual',
+    },
+    
+    {
       id: 6,
-      title: 'Proyecto 6',
-      category: 'Ilustración',
-      image: '/placeholder-6.jpg',
-      description: 'Descripción del proyecto de ilustración',
+      title: 'Logo 6',
+      category: 'Insumos de repostería y forragería',
+      image: '/logo6.jpg',
+      description: 'Diseño de logo personalizado',
     },
   ]
 
   return (
-    <section id="portfolio" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-          Mi Portfolio
-        </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-12 text-lg">
-          Explora algunos de mis trabajos más recientes
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
+    <section id="portfolio" className="py-16 sm:py-20 md:py-24 px-4 bg-gradient-to-b from-white to-burgundy-100 relative overflow-hidden">
+      {/* Elementos decorativos de fondo */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-burgundy-100/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-burgundy-200/20 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif italic font-black text-burgundy-800 mb-4 sm:mb-6 leading-tight">
+            Galeria 
+          </h2>
+          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-transparent via-burgundy-600 to-transparent mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-lg sm:text-xl md:text-2xl text-burgundy-600 italic font-light max-w-2xl mx-auto px-4">
+            Explora algunos de mis trabajos más recientes
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {projects.map((project, index) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group"
+              className="bg-white rounded-2xl overflow-hidden shadow-xl hover-lift group border-2 border-burgundy-100 relative"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="aspect-square bg-gradient-to-br from-purple-400 to-pink-400 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold opacity-50">
-                    {project.id}
-                  </span>
-                </div>
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <p className="text-white text-center px-4">{project.description}</p>
+              {/* Efecto de brillo en hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-burgundy-400/0 to-burgundy-600/0 group-hover:from-burgundy-400/10 group-hover:to-burgundy-600/10 transition-all duration-500 pointer-events-none"></div>
+              
+              <div className="aspect-square bg-white relative overflow-hidden">
+                {/* Imagen del logo */}
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-contain p-8 group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                
+                {/* Overlay en hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-burgundy-900/90 via-burgundy-800/80 to-burgundy-700/70 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-6">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                    <p className="text-white text-center text-lg italic font-light leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+                    <div className="w-16 h-px bg-white/50 mx-auto"></div>
+                  </div>
                 </div>
               </div>
-              <div className="p-6">
-                <span className="text-sm text-purple-600 dark:text-purple-400 font-semibold">
+              
+              <div className="p-6 relative z-10 bg-white">
+                <span className="inline-block px-3 py-1 bg-burgundy-100 text-burgundy-700 text-xs font-bold italic rounded-full mb-3 uppercase tracking-wider">
                   {project.category}
                 </span>
-                <h3 className="text-xl font-bold mt-2 text-gray-900 dark:text-white">
+                <h3 className="text-2xl font-serif italic font-bold text-burgundy-800 group-hover:text-burgundy-600 transition-colors">
                   {project.title}
                 </h3>
               </div>
