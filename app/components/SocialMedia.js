@@ -41,11 +41,11 @@ export default function SocialMedia() {
             </div>
           </div>
           
-          {/* Video de Vibero */}
+          {/* Video de Vivero */}
           <div className="bg-white rounded-2xl overflow-hidden shadow-xl border-2 border-burgundy-100 w-full">
             <div className="bg-gradient-to-br from-burgundy-50 to-white p-3 sm:p-4 border-b border-burgundy-100">
               <h3 className="text-lg sm:text-xl md:text-2xl font-serif italic font-bold text-burgundy-800 mb-1">
-                Vibero
+                Vivero
               </h3>
               <p className="text-burgundy-600 italic text-xs md:text-sm">
                 Producción audiovisual
