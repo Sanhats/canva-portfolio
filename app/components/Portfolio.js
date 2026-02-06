@@ -20,7 +20,7 @@ export default function Portfolio() {
     {
       id: 2,
       title: 'Logo 3',
-      category: 'Vibero',
+      category: 'Vivero',
       image: '/logo2.jpg',
       description: 'Identidad visual creativa',
     },
